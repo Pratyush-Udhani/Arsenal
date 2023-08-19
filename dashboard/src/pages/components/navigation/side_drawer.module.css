@@ -1,3 +1,13 @@
 .selected {
-    background: #76FEAA;
+    background: theme('colors.primary');
+    color: theme('colors.backdrop');
+}
+
+.box {
+   color: theme('colors.text-gray');
+}
+
+.box:hover {
+    background: theme('colors.text-gray');
+    color: theme('colors.backdrop');
 }
