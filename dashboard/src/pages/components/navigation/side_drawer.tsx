@@ -46,29 +46,67 @@ const SideDrawer: React.FC<Props> = ({ className }) => {
                     <li>
                         <div
                           onClick={() => handleClick(MenuItems['Dashboard'])}
-                          className={`flex text-text-gray flex-row cursor-pointer px-5 py-3 rounded-lg w-full ${isSelected === MenuItems['Dashboard']
-                          ? styles.selected
+                          className={`flex text-text-gray flex-row transition ease-out cursor-pointer px-5 py-3 rounded-lg w-full ${isSelected === MenuItems['Dashboard']
+                          ? "bg-primary text-backdrop"
                           :"hover:bg-text-gray hover:text-backdrop"}`}>
                             <RxDashboard className="h-auto"/>
                             <Link href="/" className="text-l mx-3">Dashboard</Link>
                         </div>
                     </li>
                     <li>
+                        <div className="flex flex-col"> 
                         <button 
                           onClick={() => handleClick(MenuItems['Divisions'])}
-                          className={`flex text-text-gray flex-row cursor-pointer px-5 py-3 rounded-lg w-full ${isSelected === MenuItems['Divisions']
-                          ? styles.selected
+                          className={`flex text-text-gray flex-row transition ease-out cursor-pointer px-5 py-3 rounded-lg w-full ${isSelected === MenuItems['Divisions']
+                          ? "bg-primary text-backdrop rounded-br-none"
                           :"hover:bg-text-gray hover:text-backdrop"}`}>
                             <FaListUl className="h-auto"/>
                             <Link href="/" className="text-l mx-3 text-start grow ">Divisions</Link>
                             <DownArrow className="h-auto self-center"/>
                         </button>
+                        { isSelected === MenuItems['Divisions'] && 
+                            <div className="flex flex-col bg-primary ml-10 rounded-b-lg transition"> 
+                                <ul>
+                                    <li>
+                                        <div
+                                            onClick={() => handleClick(MenuItems['Settings'])}
+                                            className={`flex text-backdrop flex-row cursor-pointer transition ease-out px-5 py-3 rounded-lg w-full ${true
+                                            ? "text-text-gray hover:font-bold"
+                                            :"hover:bg-text-gray hover:text-backdrop"}`}>
+                                              <p className="h-auto">#</p>
+                                              <Link href="/" className="text-l mx-3">Frontend</Link>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            onClick={() => handleClick(MenuItems['Settings'])}
+                                            className={`flex text-backdrop flex-row cursor-pointer transition ease-out px-5 py-3 rounded-lg w-full ${true
+                                            ? "text-text-gray hover:font-bold"
+                                            :"hover:bg-text-gray hover:text-backdrop"}`}>
+                                              <p className="h-auto">#</p>
+                                              <Link href="/" className="text-l mx-3">Backend</Link>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div
+                                            onClick={() => handleClick(MenuItems['Settings'])}
+                                            className={`flex text-backdrop flex-row cursor-pointer transition ease-out px-5 py-3 rounded-lg w-full ${true
+                                            ? "text-text-gray hover:font-bold"
+                                            :"hover:bg-text-gray hover:text-backdrop"}`}>
+                                              <p className="h-auto">#</p>
+                                              <Link href="/" className="text-l mx-3">AI</Link>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        }
+                        </div>
                     </li>
                     <li>
                         <div
                           onClick={() => handleClick(MenuItems['Settings'])}
-                          className={`flex text-text-gray flex-row cursor-pointer px-5 py-3 rounded-lg w-full ${isSelected === MenuItems['Settings']
-                          ? styles.selected
+                          className={`flex text-text-gray flex-row cursor-pointer transition ease-out px-5 py-3 rounded-lg w-full ${isSelected === MenuItems['Settings']
+                          ? "bg-primary text-backdrop"
                           :"hover:bg-text-gray hover:text-backdrop"}`}>
                             <SettingsIcon className="h-auto"/>
                             <Link href="/" className="text-l mx-3">Settings</Link>
