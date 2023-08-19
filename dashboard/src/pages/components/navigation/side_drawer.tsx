@@ -5,7 +5,6 @@ import { IoSettingsOutline as SettingsIcon } from "react-icons/io5";
 import { FaListUl } from "react-icons/fa";
 import React, { useState } from "react"; 
 import Logo from "public/logo";
-import styles from "./side_drawer.module.css"
 
 type Props = {
     className: string
@@ -71,7 +70,7 @@ const SideDrawer: React.FC<Props> = ({ className }) => {
                                         <div
                                             onClick={() => handleClick(MenuItems['Settings'])}
                                             className={`flex text-backdrop flex-row cursor-pointer transition ease-out px-5 py-3 rounded-lg w-full ${true
-                                            ? "text-text-gray hover:font-bold"
+                                            ? "text-backdrop hover:font-bold"
                                             :"hover:bg-text-gray hover:text-backdrop"}`}>
                                               <p className="h-auto">#</p>
                                               <Link href="/" className="text-l mx-3">Frontend</Link>
